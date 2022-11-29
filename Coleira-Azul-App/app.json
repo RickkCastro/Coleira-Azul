@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Coleira-Azul",
+    "slug": "Coleira-Azul",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
