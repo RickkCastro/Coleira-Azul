@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "930791432572",
+    "project_id": "coleira-azul",
+    "storage_bucket": "coleira-azul.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930791432572:android:ce3601cef0ad1e9f58c4f9",
+        "android_client_info": {
+          "package_name": "com.rickkcastro.coleiraazul"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930791432572-hp6bhlrqh5ucq4h5vfkbnpbi47g471mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rickkcastro.coleiraazul",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "930791432572-utm30d79aj68ki4bsu9a8mdsv11d3j3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVgFsfJfmVMhsW2gJyg-u7xC1EoaHjQFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930791432572-utm30d79aj68ki4bsu9a8mdsv11d3j3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
