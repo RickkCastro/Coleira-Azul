@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   },
 
   logo: {
-    flex: 1.4,
+    flex: 2,
     alignContent: 'center',
     justifyContent: 'center'
   },
@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
 
   buttons: {
     flex: 1,
+    width: 270,
   },
 
   text: {

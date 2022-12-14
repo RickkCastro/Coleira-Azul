@@ -9,6 +9,7 @@ import { ScPerfil } from "../screens/perfil/ScPerfil";
 
 //Armazenar todas as telas no navigator
 export function StackRoutes() {
+  //pega o user token atual
   const userToken = useContext(UserToken);
 
   return (
@@ -19,6 +20,7 @@ export function StackRoutes() {
         orientation: "portrait",
       }}
     >
+      {/* caso null vai para tela de login*/}
       {userToken == null ? (
         <Screen name="ScLogin" component={ScLogin} />
       ) : (

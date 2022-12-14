@@ -21,6 +21,7 @@ import auth from "@react-native-firebase/auth";
 import { UserToken } from "./src/context/userToken";
 
 export default function App() {
+  //Carrega a font
   let [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_700Bold,
@@ -30,13 +31,14 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState();
 
-  // Handle user state changes
+  // lida com mudanças de login
   function onAuthStateChanged(user) {
     setUser(user);
     console.log(user);
     if (!loading) setLoading(true);
   }
 
+  //verifica o estado inicial de login
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
@@ -46,6 +48,7 @@ export default function App() {
     <LinearGradient colors={["#128A84", "#79AF30"]} style={{ flex: 1 }}>
       <StatusBar style="auto" />
       {fontsLoaded && loading ? (
+        //passa o contexto de userToken para todos os componentes dentro do provider
         <UserToken.Provider value={user}>
           <Routes />
         </UserToken.Provider>

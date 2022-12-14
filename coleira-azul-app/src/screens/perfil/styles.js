@@ -32,8 +32,8 @@ export const styles = StyleSheet.create({
   },
 
   imgPerfil: {
-    width: 179,
-    height: 179,
+    width: 150,
+    height: 150,
     borderRadius: 100,
     borderColor: THEME.COLORS.TEXT,
     borderWidth: 4,
@@ -42,19 +42,22 @@ export const styles = StyleSheet.create({
   },
 
   titleView: {
-    marginTop: 80,
-    alignItems: 'center'
+    marginTop: 60,
+    alignItems: 'center',
+    marginHorizontal: 25,
   },
 
   name: {
     color: THEME.COLORS.TITLE,
     fontFamily: THEME.FONT_FAMILY.BLACK,
     fontSize: THEME.FONT_SIZE.GGG,
+    textAlign: 'center'
   },
 
   desc: {
     color: THEME.COLORS.TEXT,
     fontFamily: THEME.FONT_FAMILY.REGULAR,
     fontSize: THEME.FONT_SIZE.M,
+    textAlign: 'center'
   },
 });
