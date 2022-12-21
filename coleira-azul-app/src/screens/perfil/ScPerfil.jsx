@@ -37,14 +37,14 @@ export function ScPerfil({ navigation, route }) {
                     <LinearGradient colors={['#128A84', '#79AF30']} start={{ x: 0, y: 1 }} style={styles.gradient}>
                         <SafeAreaView>
                             <View style={styles.header}>
-                                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.button}>
-                                    <AntDesign name="left" size={32} color={THEME.COLORS.TEXT} />
+                                <TouchableOpacity onPress={() => navigation.navigate("ScEditPerfil")} style={styles.button}>
+                                    <AntDesign name="edit" size={28} color={THEME.COLORS.TEXT} />
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.button} onPress={() => signOut()}>
                                     <Text style={styles.logout}>Logout</Text>
                                 </TouchableOpacity>
                             </View>
-                            <Image source={{uri: userinfo.photoURL}} resizeMode={'cover'} style={styles.imgPerfil} />
+                            <Image source={{ uri: userinfo.photoURL }} resizeMode={'cover'} style={styles.imgPerfil} />
                         </SafeAreaView>
                     </LinearGradient>
 

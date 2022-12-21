@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
+
 import {
   useFonts,
+  Roboto_300Light,
   Roboto_400Regular,
   Roboto_700Bold,
   Roboto_900Black,
 } from "@expo-google-fonts/roboto";
+
 import { Loading } from "./src/components/Loading";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -19,10 +22,13 @@ GoogleSignin.configure({
 
 import auth from "@react-native-firebase/auth";
 import { UserToken } from "./src/context/userToken";
+import { View } from "react-native";
+import { THEME } from "./src/theme/theme";
 
 export default function App() {
   //Carrega a font
   let [fontsLoaded] = useFonts({
+    Roboto_300Light,
     Roboto_400Regular,
     Roboto_700Bold,
     Roboto_900Black,
@@ -45,7 +51,7 @@ export default function App() {
   }, []);
 
   return (
-    <LinearGradient colors={["#128A84", "#79AF30"]} style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: THEME.COLORS.BACKGROUND }}>
       <StatusBar style="auto" />
       {fontsLoaded && loading ? (
         //passa o contexto de userToken para todos os componentes dentro do provider
@@ -55,6 +61,6 @@ export default function App() {
       ) : (
         <Loading />
       )}
-    </LinearGradient>
+    </View>
   );
 }

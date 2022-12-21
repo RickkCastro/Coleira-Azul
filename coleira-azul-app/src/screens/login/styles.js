@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
 
   text: {
     color: THEME.COLORS.TEXT,
-    fontSize: THEME.FONT_SIZE.GG,
+    fontSize: THEME.FONT_SIZE.G,
     fontFamily: THEME.FONT_FAMILY.BOLD,
     textAlign: 'center',
     marginBottom: 22,
@@ -46,12 +46,13 @@ export const styles = StyleSheet.create({
   },
 
   btText: {
-    fontSize: THEME.FONT_SIZE.G,
+    fontSize: THEME.FONT_SIZE.M,
     fontFamily: THEME.FONT_FAMILY.REGULAR,
     paddingLeft: 10,
   },
 
   copy: {
+    fontSize: THEME.FONT_SIZE.P,
     color: THEME.COLORS.TEXT,
     fontFamily: THEME.FONT_FAMILY.REGULAR,
     marginBottom: 20,

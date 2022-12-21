@@ -15,30 +15,29 @@ export const styles = StyleSheet.create({
     marginTop: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   button: {
     height: 40,
+    justifyContent: 'flex-start',
     paddingHorizontal: 25,
-    justifyContent: 'flex-start'
   },
 
   logout: {
-    fontSize: THEME.FONT_SIZE.G,
+    fontSize: THEME.FONT_SIZE.M,
     fontFamily: THEME.FONT_FAMILY.REGULAR,
     color: THEME.COLORS.TEXT,
     textAlignVertical: 'center'
   },
 
   imgPerfil: {
-    width: 150,
-    height: 150,
+    width: 170,
+    height: 170,
     borderRadius: 100,
     borderColor: THEME.COLORS.TEXT,
     borderWidth: 4,
     alignSelf: 'center',
-    top: 30,
   },
 
   titleView: {
@@ -50,7 +49,7 @@ export const styles = StyleSheet.create({
   name: {
     color: THEME.COLORS.TITLE,
     fontFamily: THEME.FONT_FAMILY.BLACK,
-    fontSize: THEME.FONT_SIZE.GGG,
+    fontSize: THEME.FONT_SIZE.G,
     textAlign: 'center'
   },
 

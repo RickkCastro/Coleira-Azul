@@ -6,6 +6,7 @@ const { Screen, Navigator } = createNativeStackNavigator();
 
 import { ScLogin } from "../screens/login/ScLogin";
 import { ScPerfil } from "../screens/perfil/ScPerfil";
+import { ScEditPerfil } from "../screens/editPerfil/editPerfil";
 
 //Armazenar todas as telas no navigator
 export function StackRoutes() {
@@ -24,7 +25,10 @@ export function StackRoutes() {
       {userToken == null ? (
         <Screen name="ScLogin" component={ScLogin} />
       ) : (
-        <Screen name="ScPerfil" component={ScPerfil} />
+        <>
+          <Screen name="ScPerfil" component={ScPerfil} />
+          <Screen name="ScEditPerfil" component={ScEditPerfil}/>
+        </>
       )}
     </Navigator>
   );
