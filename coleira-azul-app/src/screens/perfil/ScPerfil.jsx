@@ -44,14 +44,14 @@ export function ScPerfil({ navigation, route }) {
                                     <Text style={styles.logout}>Logout</Text>
                                 </TouchableOpacity>
                             </View>
-                            <Image source={{ uri: userinfo.photoURL }} resizeMode={'cover'} style={styles.imgPerfil} />
+                            <Image source={{ uri: userinfo.img }} resizeMode={'cover'} style={styles.imgPerfil} />
                         </SafeAreaView>
                     </LinearGradient>
 
                     {/* Perfil infos */}
                     <View style={styles.titleView}>
-                        <Text style={styles.name} ellipsizeMode='tail' numberOfLines={2}>{userinfo.displayName}</Text>
-                        <Text style={styles.desc} ellipsizeMode='tail' numberOfLines={2}>{userinfo.email}</Text>
+                        <Text style={styles.name} ellipsizeMode='tail' numberOfLines={2}>{userinfo.name}</Text>
+                        <Text style={styles.desc} ellipsizeMode='tail' numberOfLines={2}>{userinfo.desc}</Text>
                     </View>
                 </View>
             }

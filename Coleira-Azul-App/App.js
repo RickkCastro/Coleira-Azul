@@ -25,6 +25,8 @@ import { UserToken } from "./src/context/userToken";
 import { View } from "react-native";
 import { THEME } from "./src/theme/theme";
 
+import firestore from "@react-native-firebase/firestore";
+
 export default function App() {
   //Carrega a font
   let [fontsLoaded] = useFonts({
@@ -39,9 +41,51 @@ export default function App() {
 
   // lida com mudanças de login
   function onAuthStateChanged(user) {
-    setUser(user);
-    console.log(user);
     if (!loading) setLoading(true);
+
+    if (user) {
+      firestore()
+        .collection("users")
+        .doc(user.uid)
+        // checa se existe o user
+        .onSnapshot(onResult, onError);
+
+      function onResult(documentSnapshot) {
+        console.log("User exists: ", documentSnapshot.exists);
+
+        //caso exista passa os dados dele
+        if (documentSnapshot.exists) {
+          const userData = documentSnapshot.data();
+          console.log("User data: ", userData);
+          setUser(userData);
+        }
+
+        //se nao, cria o user
+        else {
+          firestore()
+            .collection("users")
+            .doc(user.uid)
+            .set({
+              name: user.displayName,
+              desc: "Sem descrição",
+              entry_date: user.metadata.creationTime,
+              img: user.photoURL,
+            })
+            .then(() => {
+              console.log("User added!");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+      }
+
+      function onError(error) {
+        console.error(error);
+      }
+    } else {
+      setUser(null);
+    }
   }
 
   //verifica o estado inicial de login

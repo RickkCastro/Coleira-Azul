@@ -9,9 +9,15 @@ import { SafeAreaFrameContext, SafeAreaView } from 'react-native-safe-area-conte
 import { UserToken } from '../../context/userToken';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import auth from '@react-native-firebase/auth';
+
 export function ScEditPerfil({ navigation }) {
 
   const userInfo = useContext(UserToken)
+
+  function handleSaveEdit() {
+    console.log(auth().currentUser.uid)
+  }
 
   return (
     <KeyboardAvoidingView style={styles.container}>
@@ -41,7 +47,7 @@ export function ScEditPerfil({ navigation }) {
         <TextInput style={[styles.textInput, styles.descInput]} multiline numberOfLines={2}>{userInfo.email}</TextInput>
       </View>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => handleSaveEdit()}>
         <LinearGradient colors={['#128A84', '#79AF30']} start={{ x: 0, y: 1 }} style={styles.saveButton}>
           <Text style={styles.textHeader}>Salvar alterações</Text>
         </LinearGradient>
