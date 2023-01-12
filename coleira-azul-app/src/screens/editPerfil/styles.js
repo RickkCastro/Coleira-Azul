@@ -37,8 +37,12 @@ export const styles = StyleSheet.create({
 
   imgStyle: {
     opacity: 0.4,
-    width: 150,
-    height: 150,
+    borderRadius: 100,
+  },
+
+  imgStyle2: {
+    width: 170,
+    height: 170,
     alignItems: 'center',
     justifyContent: 'center',
   },

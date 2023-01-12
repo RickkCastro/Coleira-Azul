@@ -4,7 +4,7 @@ export const THEME = {
     M: 18,
     M2: 20,
     G: 22,
-    GG: 36,
+    GG: 28,
   },
 
   FONT_FAMILY: {
@@ -19,6 +19,7 @@ export const THEME = {
     TITLE: "#FFF",
     TEXT: "#FFF",
     BACKGROUND: "#2E2E2E",
+    BACKGROUND2: "#242424",
     BORDER: "#FFF",
     PRIMARY: '#79AF30',
   },

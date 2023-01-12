@@ -44,7 +44,7 @@ export default function App() {
     if (!loading) setLoading(true);
 
     if (user) {
-      firestore()
+       firestore()
         .collection("users")
         .doc(user.uid)
         // checa se existe o user
@@ -66,6 +66,7 @@ export default function App() {
             .collection("users")
             .doc(user.uid)
             .set({
+              uid: user.uid,
               name: user.displayName,
               desc: "Sem descrição",
               entry_date: user.metadata.creationTime,
@@ -81,7 +82,6 @@ export default function App() {
       }
 
       function onError(error) {
-        console.error(error);
       }
     } else {
       setUser(null);
