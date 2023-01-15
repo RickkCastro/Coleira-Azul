@@ -6,7 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { styles } from './styles';
 import { THEME } from '../../../../theme/theme';
 
-export function Item() {
+export function Item(props) {
   const status = ["Não Assistido", "Em Andamento", "Assistido"]
   const [currentStatus, setCurrentStatus] = useState("Não Assistido")
   const [color, setColor] = useState("#fff")
@@ -28,12 +28,12 @@ export function Item() {
   return (
     <TouchableOpacity style={[styles.container, { borderColor: color }]}>
       <View style={styles.infos}>
-        <Image source={{ uri: 'https://static.wikia.nocookie.net/teorias/images/e/e4/Scooby-Doo_Capa.jpg/revision/latest?cb=20160606174512&path-prefix=pt-br' }}
+        <Image source={{ uri: props.uri }}
           style={styles.img} resizeMode={'cover'} />
         <View style={styles.texts}>
-          <Text style={styles.title}>Nome do Filme</Text>
-          <Text style={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis...</Text>
-          <Text style={styles.data}>25/05/2005</Text>
+          <Text style={styles.title}>{props.name}</Text>
+          <Text style={styles.desc} ellipsizeMode='tail' numberOfLines={4}>{props.desc}</Text>
+          <Text style={styles.data}>Ano: {props.reDate}</Text>
         </View>
       </View>
       <SelectDropdown data={status} buttonStyle={{
@@ -55,7 +55,8 @@ export function Item() {
               <AntDesign name="caretdown" size={16} color={color} />
             </View>
           )
-        }} onSelect={(value) => setCurrentStatus(value)} />
+        }} onSelect={(value) => setCurrentStatus(value)}
+      />
     </TouchableOpacity>
   );
 }

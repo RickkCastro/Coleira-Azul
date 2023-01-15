@@ -88,5 +88,5 @@ export const styles = StyleSheet.create({
     flex: 1.3,
     textAlign: 'center',
     textAlignVertical: 'center'
-  }
+  },
 });

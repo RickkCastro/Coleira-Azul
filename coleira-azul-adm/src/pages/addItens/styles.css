@@ -1,0 +1,87 @@
+.title {
+  font-weight: bold;
+  color: #79af30;
+  text-align: center;
+  font-size: 48px;
+  padding: 0.5em;
+}
+
+.Form {
+  display: grid;
+  padding: 0px 100px;
+  grid-column-gap: 20px;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.labelTitle {
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+input {
+  font-size: 16px;
+  padding: 5px 5px;
+  border: 1px solid #fff;
+  background: #2e2e2e;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.btEnviar {
+  background: #79af30;
+  border: 0px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 23em;
+  margin-top: 40px;
+  align-self: center;
+
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.desc {
+  font-size: 16px;
+  padding: 5px 5px;
+  border: 1px solid #fff;
+  background: #2e2e2e;
+  color: #fff;
+  border-radius: 10px;
+  resize: none;
+}
+
+.labelDesc {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.btEnviar:hover {
+  background: #567d22;
+}
+
+button {
+  all: unset;
+}
+
+.SelectTrigger {
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px;
+  padding: 5px 5px;
+  font-size: 16px;
+  background-color: #2e2e2e;
+  color: #fff;
+  border: 1px solid #fff;
+}

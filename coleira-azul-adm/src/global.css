@@ -1,0 +1,26 @@
+:root {
+  --primary: #79af30;
+  --background: #121214;
+  --text: #FFF;
+  --caption: #b6b6be;
+  --gray: #E1E1E6;
+  --background-light: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2e2e2e;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  padding: 0px 25px;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
