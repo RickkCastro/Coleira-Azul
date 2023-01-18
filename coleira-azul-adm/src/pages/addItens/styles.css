@@ -39,13 +39,14 @@ input {
   border: 0px;
   border-radius: 20px;
   padding: 10px;
-  width: 23em;
   margin-top: 40px;
   align-self: center;
 
   color: #fff;
   font-size: 18px;
   font-weight: bold;
+
+  grid-column: 2;
 }
 
 .desc {

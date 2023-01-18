@@ -9,7 +9,7 @@ export function AddItensPG() {
   const [desc, setDesc] = useState<string>("");
   const [cover_img, setCover_img] = useState<string>("");
   const [duration, setDuration] = useState<number>(0);
-  const [relese_date, setRelese_date] = useState<number>(0);
+  const [release_date, setRelease_date] = useState<number>(0);
   const [type, setType] = useState<string>("Filme");
   const [num_eps, setNum_eps] = useState<number>(0);
   const [director, setDirector] = useState<string>("");
@@ -30,7 +30,7 @@ export function AddItensPG() {
       desc,
       cover_img,
       duration,
-      relese_date,
+      release_date,
       type,
       num_eps,
       director,
@@ -108,9 +108,9 @@ export function AddItensPG() {
           <span className="labelTitle">Data de lançamento:</span>
           <input
             type={"number"}
-            name="relese_date"
-            onChange={(e) => setRelese_date(parseInt(e.target.value))}
-            value={relese_date}
+            name="release_date"
+            onChange={(e) => setRelease_date(parseInt(e.target.value))}
+            value={release_date}
           />
         </label>
 
@@ -133,8 +133,7 @@ export function AddItensPG() {
             value={desc}
           />
         </label>
-      </div>
-      <label className="label">
+
         <input
           type={"button"}
           name="enviar"
@@ -142,7 +141,7 @@ export function AddItensPG() {
           className={"btEnviar"}
           onClick={handleEnviar}
         />
-      </label>
+      </div>
     </div>
   );
 }
