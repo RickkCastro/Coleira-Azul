@@ -40,16 +40,12 @@ export function ScChecklist() {
 				data.push(item)
 			});
 
-			data.sort((a, b) => (a.data.name > b.data.name) ? 1 : (b.data.name > a.data.name) ? -1 : 0)
-
 			setItens(data);
 		})
 	}
 
 	//Sistema de filtro e ordenação
-	const [filteredItens, setFilteredItens] = useState([])
-
-	useEffect(() => {
+	const filteredItens = () => {
 		let newList = [...itens]
 
 		//filtros de tipo e status
@@ -66,29 +62,32 @@ export function ScChecklist() {
 		//ordenar itens
 		switch (currentOrder) {
 			case 'Título':
-				newList.sort((a, b) => (a.data.name > b.data.name) ? 1 : (b.data.name > a.data.name) ? -1 : 0)
+				newList.sort((a, b) => (a.data.name > b.data.name) ?
+					1 : (b.data.name > a.data.name) ? -1 : 0)
 				break
 			case 'Título Inverso':
-				newList.sort((a, b) => (a.data.name > b.data.name) ? -1 : (b.data.name > a.data.name) ? 1 : 0)
+				newList.sort((a, b) => (a.data.name > b.data.name) ?
+					-1 : (b.data.name > a.data.name) ? 1 : 0)
 				break
 			case 'Data':
-				newList.sort((a, b) => (a.data.release_date > b.data.release_date) ? 1 : (b.data.release_date > a.data.release_date) ? -1 : 0)
+				newList.sort((a, b) => (a.data.release_date > b.data.release_date) ?
+					1 : (b.data.release_date > a.data.release_date) ? -1 : 0)
 				break
 			default:
-				newList.sort((a, b) => (a.data.release_date > b.data.release_date) ? -1 : (b.data.release_date > a.data.release_date) ? 1 : 0)
+				newList.sort((a, b) => (a.data.release_date > b.data.release_date) ?
+					-1 : (b.data.release_date > a.data.release_date) ? 1 : 0)
 		}
 
-		setFilteredItens(newList)
-	}, [currentFilter, currentOrder, currentStatus, itens])
+		return newList
+	}
 
 	// Sistema de buscar
 	const [search, setSearch] = useState('')
 
-	const filteredSearchItens = useMemo(() => {
+	const filteredSearchItens = () => {
 		const lowerSearch = search.toLowerCase()
 		return filteredItens.filter(item => item.data.name.toLowerCase().includes(lowerSearch))
-	}, [search, filteredItens])
-
+	}
 
 	return (
 		<SafeAreaView style={styles.container}>
